@@ -1,0 +1,15 @@
+{
+  "name": "proves",
+  "version": "1.0.0",
+  "description": "CSE341 Assignments",
+  "main": "prove01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon prove01.js"
+  },
+  "author": "Jennifer Thomas",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

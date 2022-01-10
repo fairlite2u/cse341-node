@@ -1,0 +1,25 @@
+{
+  "name": "cse341",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fairlite2u/cse341-node.git"
+  },
+  "author": "Jennifer Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fairlite2u/cse341-node/issues"
+  },
+  "homepage": "https://github.com/fairlite2u/cse341-node#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
