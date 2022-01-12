@@ -1,0 +1,11 @@
+body {
+  margin: none;
+  padding: none;
+  color: purple;
+  background-color: linen;
+}
+
+h1 {
+  text-align: center;
+  border: 3px dashed limegreen;
+}

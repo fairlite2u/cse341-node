@@ -5,11 +5,15 @@
   "main": "prove01.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon prove01.js"
+    "start": "nodemon prove02.js"
   },
   "author": "Jennifer Thomas",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
   }
 }
