@@ -17,14 +17,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/users', (req, res, next) => {
   res.render('users', {
+    path: '/users',
     pageTitle: 'Users', 
-    users: users
+    users: users, 
+    activeUsers: true
   });
 });
 
 app.get('/', (req, res, next) => {
   res.render('index', {
-    pageTitle: 'Add User'
+    path: '/',
+    pageTitle: 'Add User',
+    activeAddUsers: true
   });
 });
 

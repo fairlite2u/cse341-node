@@ -1,5 +1,9 @@
 <body>
   <header>
-    <a href="/">Enter User</a>
-    <a href="/users">Users</a>
+    <!-- <a href="/">Add User</a>
+    <a href="/users">Users</a> -->
+    <ul class="nav-links">
+      <li><a class="<%= path==='/' ? 'active' : '' %>" href="/">Add User</a></li>
+      <li><a class="<%= path==='/users' ? 'active' : '' %>" href="/users">Users</a></li>
+  </ul>
   </header>

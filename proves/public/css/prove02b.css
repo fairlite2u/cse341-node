@@ -27,15 +27,20 @@ header {
   align-items: center;
 }
 
-a {
-  margin: 0 1rem;
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+}
+
+.nav-links a {
   text-decoration: none;
   color: white;
 }
 
-a:hover, 
-a:active,
-a.active {
+.nav-links a:hover, 
+.nav-links a:active,
+.nav-links a.active {
   color: pink;
 }
 
@@ -54,10 +59,11 @@ form input {
   border: 2px solid navy;
   font: inherit;
   border-radius: 3px;
+  background-color: ghostwhite;
 }
 
 form input:focus {
-  outline-color: #00695c;
+  outline-color: pink;
 }
 
 button {
@@ -76,7 +82,7 @@ button:active {
   border: 1px solid pink;
 }
 
-h1 {
+h1, h2, p {
   margin-left: 2.5rem;
 }
 
