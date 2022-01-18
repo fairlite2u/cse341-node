@@ -12,18 +12,12 @@
 
 .form-control input,
 .form-control textarea {
-  border: 2px solid navy;
+  border: 1px solid #737373;
   font: inherit;
   border-radius: 3px;
 }
 
-/* .form-control input {
-  border: 1px solid #a1a1a1;
-  font: inherit;
-  border-radius: 2px;
-} */
-
 .form-control input:focus,
 .form-control textarea:focus {
-  outline-color: greenyellow;
+  outline-color: navy;
 }

@@ -19,6 +19,10 @@ form {
   display: inline;
 }
 
+.centered {
+  text-align: center;
+}
+
 .main-header {
   width: 100%;
   height: 3.5rem;
@@ -180,7 +184,7 @@ form {
   padding: 0.25rem 1rem;
   text-decoration: none;
   font: inherit;
-  border: 1px solid navy;
+  border: 2px solid navy;
   color: navy;
   background: white;
   border-radius: 3px;
@@ -191,6 +195,20 @@ form {
 .btn:active {
   background-color: navy;
   color: white;
+}
+
+.cart-list {
+  list-style:square;
+}
+
+.cart-list-item {
+  display:flex;
+  align-items: center;
+}
+
+.cart-list-item p {
+  padding-right: 10px;
+  font-size: 1.4rem;
 }
 
 @media (min-width: 768px) {
