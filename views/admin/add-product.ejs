@@ -5,6 +5,7 @@
 
 <body>
   <%- include('../includes/nav.ejs') %>
+
   <main>
     <form class="product-form" action="/admin/add-product" method="POST">
       <div class="form-control">
@@ -23,6 +24,7 @@
         <label for="description">Description</label>
         <textarea name="description" id="description" rows="5"></textarea>
       </div>
+      
       <button class="btn" type="submit">Add Product</button>
     </form>
   </main>
