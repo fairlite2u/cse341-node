@@ -52,7 +52,7 @@ const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://fairlite2u:7UbHyjQ
 
 mongoose
   .connect(
-    MONGO_URL, options
+    MONGODB_URL, options
   )
   .then(result => {
     User.findOne().then(user => {
