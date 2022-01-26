@@ -1,11 +1,12 @@
 const path = require('path');
-const PATH = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
+const cors = require('cors') 
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const errorController = require('./controllers/error');
-const mongoConnect = require('./util/database').mongoConnect;
 const User = require('./models/user');
 
 const app = express();
@@ -20,9 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-  User.findById('61f071d263cc98c290a5201e')
+  User.findById('61f173f14ea29ae9ec858590')
     .then(user => {
-      req.user = new User(user.name, user.email, user.cart, user._id);
+      req.user = user;
       next();
     })
     .catch(err => console.log(err));
@@ -33,6 +34,41 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoConnect(() => {
-  app.listen(PATH);
-});
+const corsOptions = {
+  origin: "https://cse341-fairlite2u.herokuapp.com/",
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4
+};
+
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://fairlite2u:7UbHyjQbhaXAbCN@cluster0.vnfxf.mongodb.net/shop?retryWrites=true&w=majority";
+
+mongoose
+  .connect(
+    MONGO_URL, options
+  )
+  .then(result => {
+    User.findOne().then(user => {
+      if (!user) {
+        const user = new User({
+          name: 'Jennifer',
+          email: 'jen@test.com',
+          cart: {
+            items: []
+          }
+        });
+        user.save();
+      }
+    })
+    app.listen(PORT);
+  })
+  .catch(err => {
+    console.log(err);
+  });
