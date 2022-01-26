@@ -1,6 +1,6 @@
 const path = require('path');
 const PORT = process.env.PORT || 5000;
-const cors = require('cors') 
+// const cors = require('cors'); 
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -34,25 +34,26 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-const corsOptions = {
-  origin: "https://cse341-fairlite2u.herokuapp.com/",
-  optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: "https://cse341-fairlite2u.herokuapp.com/",
+//   optionsSuccessStatus: 200
+// };
+// app.use(cors(corsOptions));
 
-const options = {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  family: 4
-};
+// const options = {
+//   useUnifiedTopology: true,
+//   useNewUrlParser: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+//   family: 4
+// };
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://fairlite2u:7UbHyjQbhaXAbCN@cluster0.vnfxf.mongodb.net/shop?retryWrites=true&w=majority";
+// const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://fairlite2u:7UbHyjQbhaXAbCN@cluster0.vnfxf.mongodb.net/shop?retryWrites=true&w=majority";
 
 mongoose
   .connect(
-    MONGODB_URL, options
+    // MONGODB_URL, options
+    "mongodb+srv://fairlite2u:7UbHyjQbhaXAbCN@cluster0.vnfxf.mongodb.net/shop?retryWrites=true&w=majority"
   )
   .then(result => {
     User.findOne().then(user => {
