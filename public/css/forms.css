@@ -2,7 +2,7 @@
   margin: 1rem 0;
 }
 
-.form-control label, 
+.form-control label,
 .form-control input,
 .form-control textarea {
   display: block;
@@ -12,12 +12,12 @@
 
 .form-control input,
 .form-control textarea {
-  border: 1px solid #737373;
+  border: 1px solid #a1a1a1;
   font: inherit;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .form-control input:focus,
 .form-control textarea:focus {
-  outline-color: navy;
+  outline-color: #00695c;
 }
