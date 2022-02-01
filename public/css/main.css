@@ -42,8 +42,10 @@ form {
 
 .main-header__nav {
   height: 100%;
-  display: none;
+  width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .main-header__item-list {
@@ -193,8 +195,8 @@ form {
   text-decoration: none;
   font: inherit;
   border: 1px solid navy;
-  color: navy;
-  background: white;
+  color: white;
+  background: navy;
   border-radius: 3px;
   cursor: pointer;
 }
@@ -202,18 +204,35 @@ form {
 .btn:hover,
 .btn:active {
   background-color: navy;
-  color: white;
+  color: greenyellow;
 }
 
 .btn.danger {
   color: red;
   border-color: red;
+  background-color: white !important;
 }
 
 .btn.danger:hover,
 .btn.danger:active {
-  background: red;
+  background: red !important;
   color: white;
+}
+
+.user-message {
+  margin: auto;
+  width: 90%;
+  border: 1px solid green;
+  padding: .5rem;
+  border-radius: 3px;
+  background-color: greenyellow;
+  text-align: center;
+}
+
+.user-message--error {
+  border-color: red;
+  background-color: rgb(252, 191, 191);
+  color: red;
 }
 
 @media (min-width: 768px) {
@@ -223,5 +242,9 @@ form {
 
   #side-menu-toggle {
     display: none;
+  }
+
+  .user-message {
+    width: 30rem;
   }
 }
