@@ -201,16 +201,17 @@ exports.postReset = (req, res, next) => {
         return user.save();
       })
       .then(result => {
-        res.redirect(`/reset/${token}`); // Change back to '/' and uncomment out code below after testing is complete
-        // transporter.sendMail({
-        //   to: req.body.email,
-        //   from: 'fairlite2u@gmail.com',
-        //   subject: 'Password Reset',
-        //   html: `
-        //     <p>You requested a password reset</p>
-        //     <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set a new password.</p>
-        //   `
-        // });
+        // res.redirect(`/reset/${token}`); // Use when SendGrid is suspended and comment out lines 205-214
+        res.redirect('/');
+        transporter.sendMail({
+          to: req.body.email,
+          from: 'fairlite2u@gmail.com',
+          subject: 'Password Reset',
+          html: `
+            <p>You requested a password reset</p>
+            <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set a new password.</p>
+          `
+        });
       })
       .catch(err => {
         const error = new Error(err);
