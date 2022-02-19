@@ -22,6 +22,9 @@
           <h2 class="product__price">$
             <%= product.price %>
           </h2>
+          <h3 class="product__size">
+            <%= product.size %>
+          </h3>
           <p class="product__description">
             <%= product.description %>
           </p>
@@ -39,7 +42,7 @@
       <% } %>
     </div>
     <% } else { %>
-    <h1 class="centered">No Products Found!</h1>
+    <h1 class="centered">No Costumes Found!</h1>
     <% } %>
   </main>
   <%- include('../includes/end.ejs') %>

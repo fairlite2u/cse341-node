@@ -30,6 +30,15 @@
           value="<% if (editing || hasError) { %><%= product.imageUrl %><% } %>">
       </div>
       <div class="form-control">
+        <label for="size">Size</label>
+        <input 
+          class="<%= validationErrors.find(e => e.param === 'size') ? 'invalid' : '' %>" 
+          type="text" 
+          name="size" 
+          id="size" 
+          value="<% if (editing || hasError) { %><%= product.size %><% } %>">
+      </div>
+      <div class="form-control">
         <label for="price">Rental Price</label>
         <input 
           class="<%= validationErrors.find(e => e.param === 'price') ? 'invalid' : '' %>" 

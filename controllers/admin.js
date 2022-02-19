@@ -17,6 +17,7 @@ exports.getAddProduct = (req, res, next) => {
 exports.postAddProduct = (req, res, next) => {
   const title = req.body.title;
   const imageUrl = req.body.imageUrl;
+  const size = req.body.size;
   const price = req.body.price;
   const description = req.body.description;
   const errors = validationResult(req);
@@ -29,6 +30,7 @@ exports.postAddProduct = (req, res, next) => {
       product: { 
         title: title,
         imageUrl: imageUrl,
+        size: size,
         price: price,
         description: description
       },
@@ -37,9 +39,9 @@ exports.postAddProduct = (req, res, next) => {
     });
   }
   const product = new Product({
-    // _id: new mongoose.Types.ObjectId('61f8af05bfcad50e0b4e0d29'),
     title: title, 
     price: price, 
+    size: size,
     description: description, 
     imageUrl: imageUrl,
     userId: req.user
@@ -89,6 +91,7 @@ exports.postEditProduct = (req, res, next) => {
   const prodId = req.body.productId;
   const updatedTitle = req.body.title;
   const updatedPrice = req.body.price;
+  const updatedSize = req.body.size;
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
 
@@ -102,6 +105,7 @@ exports.postEditProduct = (req, res, next) => {
       product: { 
         title: updatedTitle,
         imageUrl: updatedImageUrl,
+        size: updatedSize,
         price: updatedPrice,
         description: updatedDesc,
         _id: prodId
@@ -117,6 +121,7 @@ exports.postEditProduct = (req, res, next) => {
       }
       product.title = updatedTitle;
       product.price = updatedPrice;
+      product.size = updatedSize;
       product.description = updatedDesc;
       product.imageUrl = updatedImageUrl;
       return product.save()
