@@ -6,7 +6,43 @@
   <%- include('../includes/navigation.ejs') %>
 
   <main>
-    <% if (prods.length > 0) { %>
+    <h1 class="home-heading centered">The Costume Rental Shop!</h1>
+
+    <div class="pictures">
+      <% if (prods.length > 0) { %>
+      <div class="slideshow-container card">
+        <% for (let product of prods) { %>
+        <article class="product-item">
+          <div class="mySlides">
+            <picture class="card__image">
+              <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            </picture>
+            <div class="text product__title"><%= product.title %></div>
+          </div>
+        </article>
+        <% } %>
+      </div>
+      <% } else { %>
+        <br>
+      <h2 class="centered">No Products Found!</h2>
+      <% } %>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <% if (prods.length > 0) { %>
+        <% for (let i = 0; i < prods.length; i++) { %>
+          <span class="dot" onclick="currentSlide(i)"></span>
+        <% } %>
+      <% } %>
+    </div>
+    <br>
+    <div class="centered">
+      <form action="/products" method="GET">
+        <button type="submit" class="btn">View Costume Inventory Now!</button>
+      </form>
+    </div>
+
+    <!-- <% if (prods.length > 0) { %>
     <div class="grid">
       <% for (let product of prods) { %>
       <article class="card product-item">
@@ -31,6 +67,8 @@
     </div>
     <% } else { %>
     <h1>No Products Found!</h1>
-    <% } %>
+    <% } %> -->
+
+
   </main>
   <%- include('../includes/end.ejs') %>

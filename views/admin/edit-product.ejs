@@ -12,7 +12,7 @@
     <% } %>
     <form class="product-form" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST">
       <div class="form-control">
-        <label for="title">Title</label>
+        <label for="title">Costume Name</label>
         <input 
           class="<%= validationErrors.find(e => e.param === 'title') ? 'invalid' : '' %>" 
           type="text" 
@@ -30,7 +30,7 @@
           value="<% if (editing || hasError) { %><%= product.imageUrl %><% } %>">
       </div>
       <div class="form-control">
-        <label for="price">Price</label>
+        <label for="price">Rental Price</label>
         <input 
           class="<%= validationErrors.find(e => e.param === 'price') ? 'invalid' : '' %>" 
           type="number" 
@@ -52,7 +52,7 @@
         <input type="hidden" value="<%= product._id %>" name="productId">
       <% } %>
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Add Product<% } %></button>
+      <button class="btn" type="submit"><% if (editing) { %>Update Costume<% } else { %>Add Costume<% } %></button>
     </form>
   </main>
   <%- include('../includes/end.ejs') %>
