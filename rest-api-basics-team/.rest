@@ -1,0 +1,11 @@
+# GET http://localhost:8080/feed/posts
+
+POST http://localhost:8080/feed/post
+content-type: application/json
+
+{
+    "title": "Third Post",
+    "content": "This is the third post!"
+}
+
+// https://gist.github.com/BeattieM/324063512d166122ba5c
