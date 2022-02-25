@@ -10,12 +10,10 @@ Posts
   GET /feed/posts
 
     Return posts content
+
     URL Params: None
     Data Params: None
     Headers:
-      Access-Control-Allow-Origin: *
-      Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, PATCH, DELETE
-      Access-Control-Allow-Headers: Content-Type, Authorization
       Content-Type: application/json
     Success Response:
     Code: 200
@@ -34,12 +32,10 @@ Create Post
   POST /feed/post
 
     Create new post content
+
     URL Params: None
     Data Params: None
     Headers:
-      Access-Control-Allow-Origin: *
-      Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, PATCH, DELETE
-      Access-Control-Allow-Headers: Content-Type, Authorization
       Content-Type: application/json
     Success Response: 
     Code: 201
