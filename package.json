@@ -40,7 +40,8 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "pdfkit": "^0.13.0",
     "pug": "^3.0.2",
-    "sequelize": "^5.22.5"
+    "sequelize": "^5.22.5",
+    "stripe": "^8.208.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
