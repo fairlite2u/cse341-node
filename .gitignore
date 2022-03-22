@@ -1,4 +1,6 @@
 .env
 node_modules/
 inactive_files/
-assignment/
+assignments/
+server.cert
+server.key
