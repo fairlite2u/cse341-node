@@ -142,8 +142,8 @@ mongoose
     MONGODB_URL, options
   )
   .then(result => {
-    // https.createServer({ key: privateKey, cert: certificate}, app).listen(PORT, () => console.log(`Listening on ${PORT}`));
     app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+        // https.createServer({ key: privateKey, cert: certificate}, app).listen(PORT, () => console.log(`Listening on ${PORT}`));
   })
   .catch(err => {
     console.log(err);
